@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { Shell } from '@/components/layout/Shell'
 import { useApp } from '@/store/app'
+import { CounterPage } from '@/pages/CounterPage'
 import { EntryFormPage } from '@/pages/EntryFormPage'
 import { EntryPage } from '@/pages/EntryPage'
 import { HomePage } from '@/pages/HomePage'
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
         path: 'new',
         element: (
           <RequireProfile>
-            <EntryFormPage />
+            <CounterPage />
           </RequireProfile>
         ),
       },

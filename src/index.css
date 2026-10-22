@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f6f3ea;
+  --color-foam: #eef2e4;
+  --color-matcha: #7f9b6c;
+  --color-matcha-deep: #5f7a4e;
+  --color-mocha: #8b6b52;
+  --color-cocoa: #5c4334;
+  --color-ink: #2f2a24;
+  --color-mute: #7a6f63;
+  --color-pop: #e8a87c;
+  --color-card: #fffcf6;
+  --font-display: "Iowan Old Style", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+  --font-ui: "PingFang HK", "PingFang TC", "Noto Sans TC", "Hiragino Sans GB", sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: var(--font-ui);
+  background: var(--color-cream);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  color: var(--color-ink);
+  background:
+    radial-gradient(900px 420px at 0% -10%, rgba(127, 155, 108, 0.22), transparent 55%),
+    radial-gradient(700px 360px at 100% 0%, rgba(232, 168, 124, 0.18), transparent 50%),
+    radial-gradient(600px 300px at 50% 100%, rgba(139, 107, 82, 0.1), transparent 45%),
+    var(--color-cream);
+  line-height: 1.65;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.display {
+  font-family: var(--font-display);
+}
+
+.cute-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.15rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-matcha);
+  color: #fffdf8;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(95, 122, 78, 0.22);
+}
+
+.cute-btn:disabled {
+  opacity: 0.45;
+}
+
+.cute-btn-quiet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(127, 155, 108, 0.45);
+  background: var(--color-card);
+  color: var(--color-cocoa);
+}
+
+.field {
+  width: 100%;
+  border: 1.5px solid rgba(127, 155, 108, 0.28);
+  background: var(--color-card);
+  border-radius: 1rem;
+  padding: 0.7rem 0.9rem;
+  color: var(--color-ink);
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--color-matcha);
+  box-shadow: 0 0 0 3px rgba(127, 155, 108, 0.2);
+}
+
+.pill-nav {
+  background: color-mix(in srgb, var(--color-cocoa) 88%, black);
+  color: #f7f1e8;
+}
+
+.bubble {
+  background: var(--color-card);
+  border: 1.5px solid rgba(127, 155, 108, 0.18);
+  box-shadow: 0 10px 28px rgba(92, 67, 52, 0.07);
+}
+
+.character-chip {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.character-chip:active {
+  transform: scale(0.96);
+}
+
+.character-chip-active {
+  box-shadow: 0 0 0 3px rgba(127, 155, 108, 0.45);
+  transform: translateY(-2px);
+}

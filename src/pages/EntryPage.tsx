@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import { BlobMedia } from '@/components/BlobMedia'
 import { PopcornRating } from '@/components/PopcornRating'
 import { SeatCanvas } from '@/components/SeatCanvas'
+import { ShareCard } from '@/components/ShareCard'
 import { formatBytes, formatCompanion, formatHkDate, timesWatched } from '@/lib/ids'
 import { useApp } from '@/store/app'
 
@@ -264,6 +265,8 @@ export function EntryPage() {
           )}
         </div>
       </section>
+
+      <ShareCard entry={entry} profile={profile} poster={poster} />
 
       <div className="flex flex-wrap gap-2">
         <Link to={`/entry/${entry.id}/edit`} className="cute-btn">
